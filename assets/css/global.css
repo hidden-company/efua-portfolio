@@ -604,7 +604,7 @@ h6, .h6 {
 }
 
 .section-title {
-  text-transform: uppercase;
+  text-transform: none;
 }
 .section-title .description {
   letter-spacing: 3px;
@@ -941,7 +941,7 @@ a:focus {
 }
 
 .text-upper {
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .v-dark,
