@@ -3,7 +3,7 @@
     margin-bottom: 30px;
   }
 
-  .blackdsn-product-image{
+  .Effy-product-image{
     overflow: hidden;
     width: 100%;
   }
@@ -15,12 +15,12 @@
     align-items: center;
 
 
-    .blackdsn-product-image {
+    .Effy-product-image {
       flex: 0 0 25%;
       max-width: 25%;
     }
 
-    .blackdsn-product-content {
+    .Effy-product-content {
       flex: 0 0 75%;
       max-width: 75%;
       margin-left: 30px;
@@ -41,7 +41,7 @@
 
 
 
-    .onsale.dsn-blackdsn-sale {
+    .onsale.dsn-Effy-sale {
       position: absolute;
       display: inline-block;
       top: 10px;
@@ -100,7 +100,7 @@
 
     }
 
-    > *:not(.blackdsn-product-image , a) {
+    > *:not(.Effy-product-image , a) {
       padding-left: 15px;
       padding-right: 15px;
     }
@@ -136,7 +136,7 @@
 
     }
 
-    .blackdsn-product-content {
+    .Effy-product-content {
       width: 100%;
     }
 
