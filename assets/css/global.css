@@ -2719,11 +2719,9 @@ p {
 
 .portfolio-slide-container {
   width: 100vw;
-  height: 100vh;
   background-color: white;
 }
 
 .portfolio-slide-img {
-  height: 100%;
   width: 100%;
 }
