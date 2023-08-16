@@ -1,10 +1,5 @@
 "use strict";
 
-(function () {
-  // https://dashboard.emailjs.com/admin/account
-  emailjs.init("gWlcajIyskdzP3JVI");
-})();
-
 const dsnParam = {
   map: {
     marker_icon: "assets/img/map-marker.png",
@@ -1825,31 +1820,35 @@ const dsnParam = {
         message: this.message.value,
       };
 
-      emailjs.send("effy_contact_form", "effy_portfolio", contactDetails).then(
-        function () {
-          console.log("SUCCESS!");
-          const messageText =
-            "Thank you for your message. I'll get in touch as soon as possible!";
+      const PUBLIC_KEY = "gWlcajIyskdzP3JVI";
 
-          const alertBox =
-            '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +
-            messageText +
-            "</div>";
+      emailjs
+        .send("effy_contact_form", "effy_portfolio", contactDetails, PUBLIC_KEY)
+        .then(
+          function () {
+            console.log("SUCCESS!");
+            const messageText =
+              "Thank you for your message. I'll get in touch as soon as possible!";
 
-          if (messageText) {
-            // inject the alert to .messages div in our form
-            contact_form.find(".messages").html(alertBox); // empty the form
-            contact_form[0].reset();
+            const alertBox =
+              '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' +
+              messageText +
+              "</div>";
+
+            if (messageText) {
+              // inject the alert to .messages div in our form
+              contact_form.find(".messages").html(alertBox); // empty the form
+              contact_form[0].reset();
+            }
+
+            setTimeout(function () {
+              contact_form.find(".messages").html("");
+            }, 3000);
+          },
+          function (error) {
+            console.log("FAILED...", error);
           }
-
-          setTimeout(function () {
-            contact_form.find(".messages").html("");
-          }, 3000);
-        },
-        function (error) {
-          console.log("FAILED...", error);
-        }
-      );
+        );
     });
   }
 })(jQuery);
